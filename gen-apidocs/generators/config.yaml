@@ -98,7 +98,7 @@ resource_categories:
       version: v1
       group: core
     - name: VolumeAttachment
-      version: v1beta1
+      version: v1
       group: storage
   - name: "Metadata APIs"
     include: "meta"
@@ -146,6 +146,9 @@ resource_categories:
   - name: "Cluster APIs"
     include: "cluster"
     resources:
+    - name: AuditSink
+      version: v1alpha1
+      group: auditregistration
     - name: APIService
       version: v1
       group: apiregistration
@@ -164,6 +167,9 @@ resource_categories:
     - name: ComponentStatus
       version: v1
       group: core
+    - name: Lease
+      version: v1beta1
+      group: coordination
     - name: LocalSubjectAccessReview
       version: v1
       group: authorization
