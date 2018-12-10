@@ -228,9 +228,24 @@ func (d *Definition) FullHrefLink() string {
 		d.Version, groupName, d.Name, d.Group, d.Version)
 }
 
+func (d *Definition) FullHrefLinkData() (string, string) {
+	groupName := strings.Replace(strings.ToLower(d.GroupFullName), ".", "-", -1)
+	link := fmt.Sprintf("%s-%s-%s", strings.ToLower(d.Name), d.Version, groupName)
+	text := fmt.Sprintf("%s [%s/%s]", d.Name, d.Group, d.Version)
+	return link, text
+}
+
 func (d *Definition) VersionLink() string {
 	groupName := strings.Replace(strings.ToLower(d.GroupFullName), ".", "-", -1)
 	return fmt.Sprintf("<a href=\"#%s-%s-%s\">%s</a>", strings.ToLower(d.Name), d.Version, groupName, d.Version)
+}
+
+// link with text
+func (d *Definition) VersionLinkData() (string, string) {
+	groupName := strings.Replace(strings.ToLower(d.GroupFullName), ".", "-", -1)
+	link := fmt.Sprintf("%s-%s-%s", strings.ToLower(d.Name), d.Version, groupName)
+	text := fmt.Sprintf("%s", d.Version)
+	return link, text
 }
 
 func (d *Definition) Description() string {

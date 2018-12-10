@@ -1,0 +1,15 @@
+\section{CONFIG \& STORAGE}
+
+Config and Storage resources are responsible for injecting data into your
+applications and persisting data externally to your container.
+
+Common resource types:
+
+\begin{itemize}
+  \item \href{#configmap-v1-core}{ConfigMap} for providing text key value pairs
+        injected into the application through environment variables, command line arguments, or files
+  \item \href{#secret-v1-core}{Secret} for providing binary data injected into the application through files
+  \item \href{#volume-v1-core}{Volume} for providing a filesystem external to the Container.
+        Maybe shared across Containers within the same Pod and have a lifetime
+        persisting beyond a Container or Pod.
+\end{itemize}

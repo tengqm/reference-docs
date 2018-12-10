@@ -1,0 +1,18 @@
+\section{WORKLOADS}
+\label{workloads}
+
+Workloads resources are responsible for managing and running your containers on the cluster.
+\href{container-v1-core}{Containers} are created by Controllers through
+\href{pod-v1-core}{Pods}.
+Pods run Containers and provide environmental dependencies such as shared or
+persistent storage \href{volume-v1-core}{Volumes} and
+\href{configmap-v1-core}{Configurations} or
+\href{secret-v1-core}{Secrets} data injected into the container.
+
+The most common Controllers are:
+
+\begin{itemize}
+	\item \href{deployment-v1beta1-apps}{Deployments} for stateless persistent apps (e.g. HTTP servers)
+	\item \href{statefulset-v1beta1-apps}{StatefulSets} for stateful persistent apps (e.g. databases)
+	\item \href{job-v1-batch}{Jobs} for run-to-completion apps (e.g. batch jobs).
+\end{itemize}

@@ -1,0 +1,17 @@
+\section{METADATA}
+
+Metadata resources are responsible for configuring behavior of your other
+Resources within the Cluster.
+
+Common resource types:
+
+\begin{itemize}
+	\item \href{horizontalpodautoscaler-v1-autoscaling}{HorizontalPodAutoscaler(HPA)}
+	    for automatically scaling the replicacount of your workloads in response to load
+    \item \href{poddisruptionbudget-v1alpha1}{PodDisruptionBudget} for configuring
+		how many replicas in a given workload maybe made concurrently unavailable when performing maintenance.
+	\item \href{thirdpartyresource-v1beta1}{CustomResourceDefinition} for extending
+		the Kubernetes APIs with your own types
+	\item \href{event-v1-core}{Event} for notification of resource lifecycle events in the cluster.
+\end{itemize}
+

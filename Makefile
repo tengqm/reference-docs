@@ -61,7 +61,7 @@ updateapispec:
 	cp $(K8SROOT)/api/openapi-spec/swagger.json gen-apidocs/generators/openapi-spec/swagger.json
 
 api: cleanapi
-	go run gen-apidocs/main.go --config-dir=gen-apidocs/generators --munge-groups=false
+	go run gen-apidocs/main.go --config-dir=gen-apidocs/generators --munge-groups=false --backend=tex
 
 # NOTE: The following "sudo" may go away when we remove docker based api doc generator
 cleanapi:

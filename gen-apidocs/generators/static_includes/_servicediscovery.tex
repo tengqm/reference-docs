@@ -1,0 +1,13 @@
+\section{DISCOVERY \& LOAD BALANCING}
+
+Discovery and Load Balancing resources are responsible for stitching your workloads together into an accessible Loadbalanced Service.  By default,
+\href{Workloads}{Workloads} are only accessible within the cluster, and they must be exposed externally using a either
+a \textsf{LoadBalancer} or \textsf{NodePort} \href{service-v1-core}{Service}.  For development, internally accessible
+Workloads can be accessed via proxy through the api master using the \texttt{kubectl proxy} command.
+
+Common resource types:
+
+\begin{itemize}
+	\item \href{service-v1-core}{Services} for providing a single ip endpoint loadbalanced across multiple Workload replicas.
+	\item \href{ingress-v1beta1-extensions}{Ingress} for providing a https(s) endpoint http(s) routed to one or more \textsf{Services}
+\end{itemize}
