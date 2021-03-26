@@ -20,9 +20,16 @@ import (
 	"flag"
 
 	"github.com/kubernetes-sigs/reference-docs/gen-apidocs/generators"
+	"github.com/pkg/errors"
 )
+
+var flFormat = flag.String("f", "markdown", "format for output, one of 'html' and 'markdown'.")
 
 func main() {
 	flag.Parse()
-	generators.GenerateFiles()
+	if *flFormat == "html" || *flFormat == "markdown" {
+		generators.GenerateFiles(*flFormat)
+	} else {
+		panic(errors.Errorf("unsupported format '%s' specified", *flFormat))
+	}
 }

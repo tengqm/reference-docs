@@ -43,13 +43,19 @@ type DocWriter interface {
 	Finalize()
 }
 
-func GenerateFiles() {
+func GenerateFiles(format string) {
 	// Load the yaml config
 	config := api.NewConfig()
 	PrintInfo(config)
 	ensureIncludeDir()
 
-	copyright_tmpl := "<a href=\"https://github.com/kubernetes/kubernetes\">Copyright 2016-%s The Kubernetes Authors.</a>"
+	var copyright_tmpl string
+	if format == "html" {
+		copyright_tmpl = "<a href=\"https://github.com/kubernetes/kubernetes\">Copyright 2016-%s The Kubernetes Authors.</a>"
+	} else {
+		copyright_tmpl = "[Copyright 2016-%s The Kubernetes Authors](https://github.com/kubernetes/kubernetes)"
+	}
+
 	now := time.Now().Format("2006")
 	copyright := fmt.Sprintf(copyright_tmpl, now)
 	var title string
@@ -58,8 +64,12 @@ func GenerateFiles() {
 	} else {
 		title = "Kubernetes API Reference Docs"
 	}
-
-	writer := NewHTMLWriter(config, copyright, title)
+	var writer DocWriter
+	if format == "html" {
+		writer = NewHTMLWriter(config, copyright, title)
+	} else {
+		writer = NewMarkdownWriter(config, copyright, title)
+	}
 	writer.WriteOverview()
 
 	// Write API groups
