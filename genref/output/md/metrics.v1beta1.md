@@ -40,7 +40,7 @@ NodeMetrics sets resource usage metrics of a node.
   
   
 <tr><td><code>metadata</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#objectmeta-v1-meta"><code>meta/v1.ObjectMeta</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta"><code>meta/v1.ObjectMeta</code></a>
 </td>
 <td>
    <span class="text-muted">No description provided.</span>
@@ -49,7 +49,7 @@ NodeMetrics sets resource usage metrics of a node.
     
   
 <tr><td><code>timestamp</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    The following fields define time interval from which metrics were
@@ -67,7 +67,7 @@ collected from the interval [Timestamp-Window, Timestamp].</td>
     
   
 <tr><td><code>usage</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#resourcelist-v1-core"><code>core/v1.ResourceList</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcelist-v1-core"><code>core/v1.ResourceList</code></a>
 </td>
 <td>
    The memory usage is the memory working set.</td>
@@ -98,7 +98,7 @@ NodeMetricsList is a list of NodeMetrics.
   
   
 <tr><td><code>metadata</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#listmeta-v1-meta"><code>meta/v1.ListMeta</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#listmeta-v1-meta"><code>meta/v1.ListMeta</code></a>
 </td>
 <td>
    Standard list metadata.
@@ -142,7 +142,7 @@ PodMetrics sets resource usage metrics of a pod.
   
   
 <tr><td><code>metadata</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#objectmeta-v1-meta"><code>meta/v1.ObjectMeta</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#objectmeta-v1-meta"><code>meta/v1.ObjectMeta</code></a>
 </td>
 <td>
    <span class="text-muted">No description provided.</span>
@@ -151,7 +151,7 @@ PodMetrics sets resource usage metrics of a pod.
     
   
 <tr><td><code>timestamp</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#time-v1-meta"><code>meta/v1.Time</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#time-v1-meta"><code>meta/v1.Time</code></a>
 </td>
 <td>
    The following fields define time interval from which metrics were
@@ -200,7 +200,7 @@ PodMetricsList is a list of PodMetrics.
   
   
 <tr><td><code>metadata</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#listmeta-v1-meta"><code>meta/v1.ListMeta</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#listmeta-v1-meta"><code>meta/v1.ListMeta</code></a>
 </td>
 <td>
    Standard list metadata.
@@ -248,7 +248,7 @@ ContainerMetrics sets resource usage metrics of a container.
     
   
 <tr><td><code>usage</code> <B>[Required]</B><br/>
-<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.20/#resourcelist-v1-core"><code>core/v1.ResourceList</code></a>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#resourcelist-v1-core"><code>core/v1.ResourceList</code></a>
 </td>
 <td>
    The memory usage is the memory working set.</td>

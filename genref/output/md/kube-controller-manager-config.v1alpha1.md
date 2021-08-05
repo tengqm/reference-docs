@@ -424,8 +424,8 @@ RSA or ECDSA private key used to issue cluster-scoped certificates</td>
 <a href="https://godoc.org/k8s.io/apimachinery/pkg/apis/meta/v1#Duration"><code>meta/v1.Duration</code></a>
 </td>
 <td>
-   clusterSigningDuration is the length of duration signed certificates
-will be given.</td>
+   clusterSigningDuration is the max length of duration signed certificates will be given.
+Individual CSRs may request shorter certs by setting spec.expirationSeconds.</td>
 </tr>
     
   
@@ -891,16 +891,6 @@ backwards and not scale down below any recommendation it made during that period
 <td>
    HorizontalPodAutoscalerTolerance is the tolerance for when
 resource usage suggests upscaling/downscaling</td>
-</tr>
-    
-  
-<tr><td><code>HorizontalPodAutoscalerUseRESTClients</code> <B>[Required]</B><br/>
-<code>bool</code>
-</td>
-<td>
-   HorizontalPodAutoscalerUseRESTClients causes the HPA controller to use REST clients
-through the kube-aggregator when enabled, instead of using the legacy metrics client
-through the API server proxy.</td>
 </tr>
     
   
@@ -1924,7 +1914,8 @@ E.g. service-controller, route-controller, cloud-node-controller, etc</td>
 </td>
 <td>
    Component is the name of the component in which the controller should be running.
-E.g. kube-controller-manager, cloud-controller-manager, etc</td>
+E.g. kube-controller-manager, cloud-controller-manager, etc
+Or '&lowast;' meaning the controller can be run under any component that participates in the migration</td>
 </tr>
     
   
@@ -2023,6 +2014,22 @@ first item for a particular name wins</td>
 </tr>
     
   
+<tr><td><code>LeaderMigrationEnabled</code> <B>[Required]</B><br/>
+<code>bool</code>
+</td>
+<td>
+   LeaderMigrationEnabled indicates whether Leader Migration should be enabled for the controller manager.</td>
+</tr>
+    
+  
+<tr><td><code>LeaderMigration</code> <B>[Required]</B><br/>
+<a href="#controllermanager-config-k8s-io-v1alpha1-LeaderMigrationConfiguration"><code>LeaderMigrationConfiguration</code></a>
+</td>
+<td>
+   LeaderMigration holds the configuration for Leader Migration.</td>
+</tr>
+    
+  
 </tbody>
 </table>
     
@@ -2032,6 +2039,10 @@ first item for a particular name wins</td>
     
 
 
+
+**Appears in:**
+
+- [GenericControllerManagerConfiguration](#controllermanager-config-k8s-io-v1alpha1-GenericControllerManagerConfiguration)
 
 
 LeaderMigrationConfiguration provides versioned configuration for all migrating leader locks.
