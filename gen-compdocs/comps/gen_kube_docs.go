@@ -30,7 +30,7 @@ import (
 	cmapp "k8s.io/kubernetes/cmd/kube-controller-manager/app"
 	schapp "k8s.io/kubernetes/cmd/kube-scheduler/app"
 	kubeadmapp "k8s.io/kubernetes/cmd/kubeadm/app/cmd"
-	kubeletapp "k8s.io/kubernetes/cmd/kubelet/app"
+	// kubeletapp "k8s.io/kubernetes/cmd/kubelet/app"
 )
 
 func GenerateFiles(path, module string) error {
@@ -55,9 +55,9 @@ func GenerateFiles(path, module string) error {
 		scheduler := schapp.NewSchedulerCommand()
 		return generators.GenMarkdownTree(scheduler, outDir, true)
 
-	case "kubelet":
-		kubelet := kubeletapp.NewKubeletCommand()
-		return generators.GenMarkdownTree(kubelet, outDir, true)
+	//	case "kubelet":
+	//	kubelet := kubeletapp.NewKubeletCommand()
+	//	return generators.GenMarkdownTree(kubelet, outDir, true)
 
 	case "kubeadm":
 		pflag.CommandLine = pflag.NewFlagSet(os.Args[0], pflag.ExitOnError)
